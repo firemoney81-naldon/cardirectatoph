@@ -1,23 +1,557 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Home</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <!--
-      Need a visual blank slate?
-      Remove all code in `styles.css`!
-    -->
-    <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="script.js"></script>
-  </head>
-  <body>
-    <nav>
-      <a href="/" aria-current="page">Home</a>
-      <a href="/page2.html">Other page</a>
+
+ <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://yourdomain.com/landrover-maintenance-cost"
+      },
+      "headline": "2026년 레인지로버 유지비 완벽 분석: 모델별 가격 견적 및 절약 팁",
+      "image": [
+        "https://images.pexels.com/photos/10232189/pexels-photo-10232189.jpeg"
+      ],
+      "author": {
+        "@type": "Organization",
+        "name": "카 인포메이션 센터"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "카 인포메이션 센터",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://yourdomain.com/logo.png"
+        }
+      },
+      "datePublished": "2026-03-01",
+      "dateModified": "2026-04-01",
+      "description": "2026년 레인지로버 유지비 총정리. 모델별(디펜더, 이보크, 벨라, 스포츠) 평균 비용, 보험료, 연비, 수리비 견적 비교 및 저렴한 관리 방법 전문 가이드."
+    }
+  </script>
+
+  <!-- Google Fonts for professional Korean typography -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+
+  <!-- Custom CSS for design -->
+  <style>
+    body {
+      font-family: "Noto Sans KR", sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.7;
+      background-color: #f8f9fa; /* 부드러운 배경색 */
+      color: #333;
+    }
+    header {
+      background-color: #2c3e50; /* 어두운 네이비색 (고급스러움) */
+      color: white;
+      padding: 3rem 1rem 2rem;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      position: relative;
+      overflow: hidden;
+    }
+    header::before { /* 배경 이미지 오버레이 */
+      content: "";
+      background: url('https://images.pexels.com/photos/10232189/pexels-photo-10232189.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2') center/cover no-repeat;
+      opacity: 0.2;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+    header h1 {
+      font-size: 2.8rem;
+      font-weight: 900;
+      margin-bottom: 0.8rem;
+      color: #ecf0f1;
+      position: relative;
+      z-index: 2;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      gap: 2.5rem;
+      margin-top: 1.5rem;
+      position: relative;
+      z-index: 2;
+    }
+    nav a {
+      color: #ecf0f1;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease, transform 0.2s ease;
+      position: relative;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+    }
+    nav a:hover, nav a:focus {
+      color: #f1c40f; /* 골드 색상 */
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+    main {
+      max-width: 1000px;
+      margin: 3rem auto;
+      padding: 0 2rem;
+      background-color: white;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.05);
+      border-radius: 12px;
+    }
+    h2, h3 {
+      color: #2c3e50;
+      padding-top: 2.5rem;
+      padding-bottom: 0.8rem;
+      margin-top: 0;
+      border-bottom: 2px solid #ecf0f1;
+      font-weight: 700;
+    }
+    h2 { font-size: 2rem; }
+    h3 { font-size: 1.5rem; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 2rem;
+      background-color: #fcfcfc;
+      font-size: 0.95rem;
+    }
+    th, td {
+      padding: 1.2rem;
+      border: 1px solid #ddd;
+      text-align: left;
+    }
+    th {
+      background-color: #34495e; /* 진한 회색조 */
+      color: white;
+      font-weight: 700;
+    }
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+    .cost-highlight {
+      background-color: #fff3e0;
+      border-left: 4px solid #f9a825;
+      padding: 1rem;
+      margin: 1.5rem 0;
+      border-radius: 8px;
+    }
+    .cost-highlight p { margin: 0; }
+
+    .cta-button {
+      display: block;
+      width: fit-content;
+      margin: 3rem auto;
+      background-color: #e67e22; /* 주황색 */
+      color: white;
+      font-weight: 700;
+      padding: 1.4rem 3rem;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      text-align: center;
+      box-shadow: 0 6px 15px rgba(230, 126, 34, 0.3);
+      font-size: 1.1rem;
+    }
+    .cta-button:hover {
+      background-color: #d35400;
+      transform: translateY(-3px);
+    }
+    .keyword-tags {
+      margin: 2rem 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .keyword-tags a {
+      background-color: #eaf2f8;
+      color: #34495e;
+      padding: 10px 18px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      font-weight: 500;
+    }
+    .keyword-tags a:hover {
+      background-color: #d5e4f2;
+      color: #2c3e50;
+    }
+    .external-links {
+      margin-top: 2rem;
+      padding: 1.5rem;
+      background-color: #fcfcfc;
+      border-radius: 8px;
+      border: 1px solid #eee;
+    }
+    .external-links h3 {
+        padding-top: 0;
+        border-bottom: none;
+        margin-top: 0;
+    }
+    .external-links a {
+      color: #2980b9;
+      text-decoration: underline;
+      margin-right: 20px;
+      font-weight: 500;
+      line-height: 2;
+    }
+    .external-links a:hover {
+      color: #3498db;
+    }
+    dl dt {
+      font-weight: 700;
+      margin-top: 1.5rem;
+      cursor: pointer;
+      color: #2c3e50;
+      transition: color 0.3s ease;
+      font-size: 1.1rem;
+      padding: 10px 0;
+      border-bottom: 1px dashed #ddd;
+    }
+    dl dt:hover {
+      color: #3498db;
+    }
+    dl dd {
+      margin-left: 1.5rem;
+      margin-bottom: 1.5rem;
+      display: none;
+      background-color: #fefefe;
+      padding: 1rem;
+      border-radius: 8px;
+      border-left: 3px solid #3498db;
+    }
+    dl dt.active + dd {
+      display: block;
+    }
+    footer {
+      text-align: center;
+      padding: 3rem 1rem;
+      font-size: 0.9rem;
+      color: #777;
+      background-color: #f1f3f5;
+      margin-top: 3rem;
+      border-top: 1px solid #ddd;
+    }
+
+    /* Form Styles */
+    form {
+      background-color: #fafafa;
+      padding: 2.5rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      margin-top: 2rem;
+    }
+    form label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: #555;
+    }
+    form input[type="text"],
+    form input[type="number"],
+    form select,
+    form textarea {
+      width: calc(100% - 20px);
+      padding: 10px;
+      margin-bottom: 1.5rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+    form button {
+      background-color: #2980b9;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      font-weight: 600;
+    }
+    form button:hover {
+      background-color: #2c3e50;
+    }
+    .two-column {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    @media (max-width: 768px) {
+      .two-column {
+        grid-template-columns: 1fr;
+      }
+      header h1 {
+        font-size: 2.2rem;
+      }
+      main {
+        padding: 0 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>레인지로버 유지비 완벽 분석: 모델별 가격 견적 및 절약 팁</h1>
+    <p>럭셔리 SUV의 대명사 레인지로버, 2026년 기준 정확한 유지비용을 알아보세요.</p>
+    <nav aria-label="메인 메뉴">
+      <ul>
+        <li><a href="#intro">개요</a></li>
+        <li><a href="#models-cost">모델별 비용</a></li>
+        <li><a href="#cost-factors">주요 요인 분석</a></li>
+        <li><a href="#savings-tips">절약 팁</a></li>
+        <li><a href="#faq">자주 묻는 질문</a></li>
+        <li><a href="#contact">견적 요청</a></li>
+      </ul>
     </nav>
-    <main>
-      <h1>Home page</h1>
-    </main>
-  </body>
-</html>
+  </header>
+
+  <main>
+    <section id="intro">
+      <h2>레인지로버 유지비, 정말 비쌀까? 2026년 기준 현실적인 가이드 📊</h2>
+      <p>레인지로버는 압도적인 존재감과 럭셔리한 실내 공간으로 많은 이들의 드림카로 꼽힙니다. 하지만 동시에 <strong>'레인지로버 유지비'</strong>는 고가 수입차 중에서도 악명이 높은 편입니다. 특히, 2026년 현재 고물가와 환율 변동으로 인해 수입차 유지비에 대한 관심이 더욱 높아지고 있습니다. 이 가이드는 레인지로버 오너 또는 구매 예정자들이 궁금해하는 <strong>정확한 유지비용 견적</strong>을 제시하고, <strong>저렴하게 관리하는 방법</strong>을 A부터 Z까지 알려드립니다. 레인지로버 유지비를 구성하는 핵심 요소인 <strong>수리비, 보험료, 연비, 소모품 교체 주기</strong> 등을 상세히 분석하여, 현명한 소비 결정을 돕는 것을 목표로 합니다.</p>
+
+      <div class="keyword-tags" aria-label="연관 키워드">
+        <a href="#cost-factors">레인지로버 유지비</a>
+        <a href="#models-cost">레인지로버 디펜더 유지비</a>
+        <a href="#models-cost">레인지로버 이보크 유지비</a>
+        <a href="#cost-factors">수입차 유지비 비교</a>
+        <a href="#savings-tips">레인지로버 수리비 절약</a>
+        <a href="#models-cost">레인지로버 스포츠 유지비</a>
+        <a href="#faq">레인지로버 고질병</a>
+        <a href="#savings-tips">레인지로버 서비스센터 할인</a>
+        <a href="#cost-factors">레인지로버 부품 가격</a>
+        <a href="#intro">레인지로버 유지비 내돈내산 후기</a>
+        <a href="#contact">레인지로버 유지비 견적 요청</a>
+        <a href="#faq">랜드로버 보증기간 연장</a>
+      </div>
+
+      <p class="cost-highlight"><strong>[핵심 요약]</strong> 레인지로버 유지비는 일반 국산차 대비 2~3배 높게 책정되는 경우가 많습니다. 특히 <strong>부품 가격과 공임비</strong>가 높으며, 정식 서비스 센터 대신 <strong>전문 사설 정비소</strong>를 이용하면 상당 부분 비용을 절감할 수 있습니다.</p>
+    </section>
+
+    <section id="models-cost">
+      <h2>레인지로버 모델별 유지비 상세 분석 (2026년) 📈</h2>
+      <p>레인지로버는 다양한 모델 라인업(레인지로버, 레인지로버 스포츠, 레인지로버 벨라, 레인지로버 이보크, 디펜더)을 보유하고 있습니다. 모델별로 엔진 종류, 차체 크기, 첨단 기능 탑재 여부가 달라지기 때문에 유지비용에도 큰 차이가 발생합니다. 2026년 기준으로 각 모델별 예상 유지비용과 주요 소모품 교체 비용을 비교 분석합니다.</p>
+
+      <h3>1. 레인지로버 스포츠 & 일반 레인지로버 (최상위 모델)</h3>
+      <p>레인지로버와 레인지로버 스포츠는 랜드로버의 플래그십 모델로, 가장 높은 수준의 유지비가 발생합니다. 특히 에어 서스펜션(Air Suspension)과 같은 첨단 기술이 적용된 부품은 고장 시 수리비가 높게 책정됩니다. V8 가솔린 엔진 모델은 연비도 낮아 유류비 부담이 큽니다. <strong>레인지로버 스포츠 유지비</strong>는 연간 최소 500만원 이상(유류비 제외)을 예상해야 합니다.</p>
+      <ul>
+        <li><strong>주요 유지비 요인:</strong> 고성능 엔진 오일 및 필터 교체, 대형 브레이크 패드/디스크 교체, 에어 서스펜션 부품(콤프레서, 에어 스프링) 내구성 문제.</li>
+        <li><strong>추가 고려사항:</strong> <strong>레인지로버 P530 유지비</strong>와 같은 고성능 모델은 일반 모델보다 보험료와 타이어 교체 주기가 짧아 비용이 더 높습니다.</li>
+      </ul>
+
+      <h3>2. 레인지로버 이보크 (엔트리 모델)</h3>
+      <p>이보크는 랜드로버 라인업 중 가장 작은 모델로, 상대적으로 <strong>레인지로버 이보크 유지비</strong>가 낮습니다. 하지만 국산 엔트리 SUV와 비교하면 여전히 높은 수준입니다. 특히 이보크는 디자인적 요소가 강한 만큼, 외관 부품이나 특수 사양의 수리비가 예상보다 높을 수 있습니다. <strong>레인지로버 이보크 P250 유지비</strong>를 기준으로 연간 250~350만원(유류비 제외) 정도를 예상하는 것이 일반적입니다.</p>
+      <ul>
+        <li><strong>주요 유지비 요인:</strong> 4기통 엔진 소모품 교체, 일반적인 브레이크 시스템, 상대적으로 저렴한 타이어 사이즈.</li>
+        <li><strong>고려사항:</strong> <strong>레인지로버 이보크 디젤 유지비</strong>가 가솔린 모델보다 유류비는 절감되지만, 디젤 차량 특유의 DPF 관련 수리비가 발생할 수 있습니다.</li>
+      </ul>
+
+      <h3>3. 레인지로버 벨라 (미드 사이즈 SUV)</h3>
+      <p>레인지로버 벨라는 이보크와 스포츠 사이에 위치하며, 세련된 디자인으로 인기가 높습니다. <strong>레인지로버 벨라 유지비</strong>는 이보크보다는 높고 스포츠보다는 낮은 중간 수준입니다. <strong>레인지로버 벨라 D200 유지비</strong>(디젤) 기준으로 연간 300~400만원 정도의 소모품 및 일반 정비 비용이 발생합니다. 벨라의 특징인 팝업 도어 핸들 등 전자 장비가 고장날 경우 수리비용이 만만치 않습니다.</p>
+
+      <h3>4. 디펜더 (오프로드 전문 모델)</h3>
+      <p>디펜더는 오프로드 성향이 강한 모델로, 내구성이 강조되지만 특유의 디자인과 기능으로 인해 일반적인 레인지로버 모델과는 다른 유지비 구조를 가집니다. <strong>레인지로버 디펜더 유지비</strong>는 오프로드 주행 여부에 따라 크게 달라집니다. 오프로드 주행이 잦을 경우 하체 부품 및 타이어 마모가 빨라져 비용이 증가합니다. <strong>디펜더 P400 유지비</strong>를 고려할 때, 엔진 오일 교체 외에 험로 주행에 따른 정기적인 점검 비용을 추가해야 합니다.</p>
+
+      <div class="cost-highlight">
+        <p><strong>[모델별 유지비 순위]</strong> 레인지로버 스포츠(가장 높음) > 레인지로버 벨라 > 레인지로버 디펜더 > 레인지로버 이보크(상대적으로 낮음)</p>
+      </div>
+
+      <h4>표: 레인지로버 모델별 주요 소모품 교체 비용 비교 (2026년 예상 견적)</h4>
+      <p>아래 표는 2026년 기준 랜드로버 정식 서비스센터의 예상 견적 금액입니다. 사설 정비소를 이용하면 20~40% 절감될 수 있습니다.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>구분</th>
+            <th>레인지로버 이보크 (4기통 기준)</th>
+            <th>레인지로버 벨라 / 디펜더 (6기통 기준)</th>
+            <th>레인지로버 스포츠 (V8 기준)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>엔진 오일 교환 (정식센터)</td>
+            <td>약 30만원 ~ 40만원</td>
+            <td>약 45만원 ~ 60만원</td>
+            <td>약 50만원 ~ 70만원</td>
+          </tr>
+          <tr>
+            <td>앞 브레이크 패드 교환</td>
+            <td>약 40만원 ~ 50만원</td>
+            <td>약 60만원 ~ 80만원</td>
+            <td>약 80만원 ~ 100만원 이상</td>
+          </tr>
+          <tr>
+            <td>브레이크 디스크 교환 (앞)</td>
+            <td>약 80만원 ~ 100만원</td>
+            <td>약 120만원 ~ 150만원</td>
+            <td>약 180만원 ~ 200만원 이상</td>
+          </tr>
+          <tr>
+            <td>타이어 교체 (1짝 기준)</td>
+            <td>약 30만원 ~ 40만원</td>
+            <td>약 40만원 ~ 60만원</td>
+            <td>약 50만원 ~ 80만원 이상</td>
+          </tr>
+          <tr>
+            <td>에어컨 필터 및 에어 필터 교체</td>
+            <td>약 15만원 ~ 20만원</td>
+            <td>약 20만원 ~ 25만원</td>
+            <td>약 25만원 ~ 30만원</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>※ 상기 금액은 2026년 기준 참고용이며, 정확한 <strong>이사짐센터 가격</strong>이 아닌 <strong>차량 유지보수 비용</strong>입니다. 모델 사양 및 부품 수급 상황에 따라 변동될 수 있습니다.</p>
+    </section>
+
+    <section id="cost-factors">
+      <h2>레인지로버 유지비 상승의 근본적인 원인 분석</h2>
+      <p>레인지로버의 유지비가 높게 책정되는 데는 몇 가지 구조적인 이유가 있습니다. 단순히 '수입차라서 비싸다'는 인식을 넘어, 정확한 원인을 이해하면 합리적인 소비가 가능합니다. <strong>레인지로버 유지비</strong>에 영향을 미치는 핵심 요소를 심층적으로 분석해봅니다.</p>
+
+      <h3>1. 높은 부품 가격 (수입 및 프리미엄 부품)</h3>
+      <p>레인지로버는 럭셔리 SUV로 분류되며, 차량에 사용되는 모든 부품이 프리미엄급으로 제작됩니다. 부품 자체가 고성능이거나 특수한 기능(알루미늄 바디, 첨단 전자 장비 등)을 가지고 있어 원가가 높습니다. 또한, 부품의 수입 과정에서 발생하는 관세와 물류비용이 추가되어 국산차 대비 부품 단가가 2~5배 높게 책정됩니다. 특히 <strong>레인지로버 Phev 유지비</strong>와 같은 하이브리드 모델은 배터리 및 관련 부품 수리 시 추가적인 고비용이 발생할 수 있습니다.</p>
+
+      <h3>2. 복잡한 구조와 높은 공임비</h3>
+      <p>레인지로버는 오프로드 주행 성능을 위해 복잡한 하체 구조를 가지고 있습니다. 또한, 고급 편의 사양과 첨단 전자 제어 시스템이 적용되어 정비 난이도가 높습니다. <strong>랜드로버 서비스 센터</strong>에서는 고도의 기술력을 가진 정비사가 투입되며, 이들의 시간당 공임비가 높게 책정됩니다. 사설 정비소에서도 레인지로버 정비 전문 인력을 찾기 어려워 공임비가 국산차 정비소보다 높습니다. <strong>레인지로버 유지비 디시</strong> 등 온라인 커뮤니티에서 자주 언급되는 '공임비 폭탄'은 이러한 구조적 문제에서 기인합니다.</p>
+
+      <h3>3. 고질병 및 빈번한 잔고장</h3>
+      <p>일부 레인지로버 모델은 특정 부위에 <strong>고질병</strong>이 존재합니다. 특히 에어 서스펜션(Air Suspension) 시스템은 주행 환경과 무관하게 일정 기간이 지나면 수리 또는 교체가 필요한 경우가 많습니다. 또한, 누유 문제나 전자 장비 오류 등 잦은 잔고장이 발생할 경우 <strong>레인지로버 수리비 견적</strong>은 예상보다 빠르게 증가할 수 있습니다. <strong>레인지로버 중고차 유지비</strong>를 고려할 때, 보증기간이 지난 차량은 이러한 고질병 수리비를 감당해야 하므로 더욱 신중한 접근이 필요합니다.</p>
+
+      <h3>4. 낮은 연비와 높은 보험료</h3>
+      <p>레인지로버는 대형 SUV로, 공차중량이 무겁고 엔진 출력이 높아 <strong>연비</strong>가 상대적으로 낮습니다. V8 가솔린 모델은 시내 주행 시 5~6km/l 정도의 연비를 보이며, 이는 유류비 부담을 가중시키는 주된 요인입니다. 또한, 차량가액이 높고 사고 시 수리비가 높게 책정되므로 <strong>레인지로버 보험료</strong> 역시 국산차 대비 2~3배 높게 책정되는 경우가 많습니다. 특히 <strong>레인지로버 벨라 유지비</strong>를 고려하는 젊은 층은 보험료 할증에 대한 부담도 함께 계산해야 합니다.</p>
+    </section>
+
+    <section id="savings-tips">
+      <h2>레인지로버 유지비를 저렴하게 절약하는 실질적인 팁 💡</h2>
+      <p>레인지로버 유지비가 높다고 해서 무조건 포기할 필요는 없습니다. 현명한 관리 방법과 합리적인 선택을 통해 <strong>레인지로버 유지비를 절감</strong>할 수 있습니다. <strong>레인지로버 저렴하게 관리하는 법</strong>에 대한 구체적인 팁을 제시합니다.</p>
+
+      <h3>1. 보증기간 연장 및 정품 부품 할인 활용</h3>
+      <p><strong>레인지로버 보증기간</strong>은 일반적으로 신차 출고 후 3~5년입니다. 보증기간 내에는 무상 수리가 가능하므로, 보증기간이 끝나기 전에 꼼꼼히 차량 점검을 받는 것이 중요합니다. 보증기간이 끝난 후에는 <strong>서비스 플랜</strong>이나 <strong>보증 연장 프로그램</strong>을 구매하여 고액 수리비를 대비하는 것도 좋은 방법입니다. 또한 랜드로버 정식 서비스센터에서는 프로모션 기간에 <strong>소모품 교환 할인</strong>을 제공하기도 합니다. <strong>레인지로버 서비스센터 할인</strong> 정보를 주기적으로 확인하세요.</p>
+
+      <h3>2. 사설 전문 정비소 이용 (내돈내산 후기 확인)</h3>
+      <p>보증기간이 끝난 차량은 <strong>사설 전문 정비소</strong>를 이용하는 것이 <strong>레인지로버 유지비 절감</strong>의 핵심입니다. 정식 서비스센터 대비 공임비가 낮고, 부품을 정품이 아닌 OE(Original Equipment) 부품이나 사제 부품으로 선택할 수 있어 <strong>레인지로버 부품 가격 비교</strong>를 통해 상당한 절약이 가능합니다. <strong>레인지로버 정비소 추천</strong> 시 사설 전문 업체의 <strong>내돈내산 후기</strong>를 참고하여 실력 있는 곳을 찾는 것이 중요합니다.</p>
+
+      <h3>3. 정기적인 예방 정비</h3>
+      <p>레인지로버의 고질병 중 하나인 에어 서스펜션이나 누유 문제는 초기 발견 시 비용이 적게 듭니다. <strong>정기적인 예방 정비</strong>를 통해 고장이 커지기 전에 미리 대처하는 것이 중요합니다. 엔진 오일 교환 시 하체 점검을 꼼꼼히 요청하고, 타이어 공기압을 주기적으로 확인하는 등 기본적인 관리만으로도 큰 수리비를 막을 수 있습니다. <strong>레인지로버 디펜더 유지비</strong>를 걱정하는 오너라면 특히 하체 부품 점검에 신경을 써야 합니다.</p>
+
+      <h3>4. 타이어 관리 및 선택</h3>
+      <p>레인지로버는 고성능 타이어를 사용합니다. 타이어 한 짝당 가격이 30~80만원에 달하므로 타이어 교체 비용이 상당한 부담입니다. <strong>타이어 수명 연장</strong>을 위해 주기적인 위치 교환을 하고, <strong>레인지로버 유지비</strong>를 줄이기 위해 런플랫 타이어가 아닌 일반 타이어를 선택하거나, <strong>타이어 할인</strong> 이벤트를 활용하는 것이 좋습니다.</p>
+
+      <h3>5. 보험료 할인 및 비교 (다이렉트 보험 활용)</h3>
+      <p><strong>레인지로버 보험료</strong>는 차량가액에 비례하여 높습니다. 다이렉트 자동차 보험을 활용하여 여러 보험사의 견적을 비교하면 <strong>레인지로버 보험료 절감</strong>이 가능합니다. 또한, 운전자 한정, 블랙박스 할인, 마일리지 특약 등을 적극적으로 활용하여 불필요한 비용을 줄일 수 있습니다. <strong>레인지로버 Phev 유지비</strong>를 고려할 때 하이브리드 할인 혜택도 놓치지 마세요.</p>
+    </section>
+
+    <section id="faq">
+      <h2>자주 묻는 질문 (FAQ)</h2>
+      <dl>
+        <dt tabindex="0" aria-expanded="false">레인지로버 고질병, 정말 심각한가요?</dt>
+        <dd>모델과 연식에 따라 차이가 있습니다. <strong>레인지로버 고질병</strong>으로 가장 많이 언급되는 것은 에어 서스펜션 고장, 전자 장비 오류, 누유(오일/냉각수) 등입니다. 특히 <strong>레인지로버 중고차 유지비</strong>를 고려하는 경우, 이러한 고질병 수리 이력을 반드시 확인해야 합니다. 신차의 경우 보증기간 내 무상 수리가 가능하므로 크게 염려할 필요는 없습니다.</dd>
+
+        <dt tabindex="0" aria-expanded="false">레인지로버 유지비가 BMW X5나 벤츠 GLE보다 비싼가요?</dt>
+        <dd>일반적으로 동급 모델(예: <strong>레인지로버 스포츠 유지비</strong> vs. <strong>BMW X5 유지비</strong>)을 비교했을 때, 레인지로버의 유지비가 더 높게 책정되는 경우가 많습니다. 특히 <strong>부품 가격과 공임비</strong>에서 차이가 납니다. BMW는 5시리즈, 벤츠는 E클래스 등 주력 모델을 위한 정비 인프라가 잘 갖춰져 있어 <strong>수입차 유지비 비교</strong> 시 레인지로버가 불리한 위치에 있습니다. <strong>레인지로버 유지비 순위</strong>는 고가 수입차 중에서도 상위권에 속합니다.</dd>
+
+        <dt tabindex="0" aria-expanded="false">레인지로버 디젤 모델의 유지비가 더 저렴한가요?</dt>
+        <dd>디젤 모델은 가솔린 모델 대비 연비가 우수하여 유류비 절감 효과가 있습니다. 하지만 디젤 차량 특성상 DPF(매연 저감 장치) 관련 정비, 인젝터 클리닝 등 추가적인 유지보수 항목이 발생할 수 있습니다. <strong>레인지로버 디젤 유지비</strong>를 고려할 때는 유류비 절약과 추가 정비 비용을 함께 고려해야 합니다. 주행 거리가 짧다면 가솔린 모델이, 장거리 운행이 많다면 디젤 모델이 유리할 수 있습니다.</dd>
+
+        <dt tabindex="0" aria-expanded="false">중고 레인지로버 구입 시 유의사항은 무엇인가요?</dt>
+        <dd><strong>레인지로버 중고차 유지비</strong>는 신차보다 훨씬 높을 수 있습니다. 구매 전 반드시 <strong>차량 진단 서비스</strong>(PDI)를 받아 에어 서스펜션 작동 여부, 누유 흔적, 전자 장비 오류 등을 꼼꼼히 확인해야 합니다. 특히 <strong>랜드로버 보증기간</strong>이 남아있는 중고차를 구매하는 것이 리스크를 줄이는 가장 좋은 방법입니다. <strong>레인지로버 중고차 가격 비교</strong> 시 수리 이력과 보증 여부를 최우선으로 고려해야 합니다.</dd>
+      </dl>
+    </section>
+
+    <section id="cost-estimator">
+      <h2>레인지로버 유지비 예상 견적 계산기 💰 (Dwell Time 최적화)</h2>
+      <p>아래 입력란을 통해 기본적인 정보를 입력하시면 <strong>레인지로버 유지비</strong>에 대한 대략적인 예상 견적을 받아볼 수 있습니다. <strong>레인지로버 유지비 견적</strong>은 운전 습관, 주행 거리, 정비소 선택에 따라 달라지므로 참고용으로 활용하시기 바랍니다.</p>
+      <form id="maintenance-form">
+        <div class="two-column">
+          <div>
+            <label for="car-model">모델 선택:</label>
+            <select id="car-model" required>
+              <option value="">-- 모델을 선택하세요 --</option>
+              <option value="evoque">레인지로버 이보크</option>
+              <option value="velar">레인지로버 벨라</option>
+              <option value="defender">레인지로버 디펜더</option>
+              <option value="sport">레인지로버 스포츠</option>
+              <option value="range-rover">레인지로버 (풀사이즈)</option>
+            </select>
+          </div>
+          <div>
+            <label for="car-year">차량 연식 (예: 2021):</label>
+            <input type="number" id="car-year" min="2010" max="2026" required>
+          </div>
+        </div>
+        <div class="two-column">
+          <div>
+            <label for="mileage">현재 주행 거리 (km):</label>
+            <input type="number" id="mileage" required>
+          </div>
+          <div>
+            <label for="fuel-type">연료 종류:</label>
+            <select id="fuel-type" required>
+              <option value="gasoline">가솔린</option>
+              <option value="diesel">디젤</option>
+              <option value="phev">플러그인 하이브리드(PHEV)</option>
+            </select>
+          </div>
+        </div>
+        <label for="service-items">정비 희망 항목 (다중 선택 가능):</label>
+        <div class="checkbox-group">
+          <input type="checkbox" id="service1" name="services" value="engine_oil"> <label for="service1">엔진 오일 교환</label><br>
+          <input type="checkbox" id="service2" name="services" value="brake_pad"> <label for="service2">브레이크 패드 교환</label><br>
+          <input type="checkbox" id="service3" name="services" value="air_filter"> <label for="service3">에어/연료 필터 교환</label><br>
+          <input type="checkbox" id="service4" name="services" value="major_checkup"> <label for="service4">대규모 정기 점검 (5만/10만km)</label><br>
+          <input type="checkbox" id="service5" name="services" value="air_suspension"> <label for="service5">에어 서스펜션 점검/수리</label>
+        </div>
+        <label for="additional-info">추가 요청사항:</label>
+        <textarea id="additional-info" rows="4"></textarea>
+        <button type="submit">예상 견적 요청하기</button>
+      </form>
+      <div id="result-message" style="margin-top: 1.5rem; color: #e74c3c; font-weight: bold;"></div>
+    </section>
+
+    <section id="external-links">
+      <h2>신뢰할 수 있는 정보 출처 및 관련 사이트</h2>
+      <p>보다 정확하고 객관적인 정보를 위해 공신력 있는 기관의 자료를 참고하세요.</p>
+      <div class="external-links">
+        <a href="https://www.kca.go.kr/home/sub.do?menu_seq=29" target="_blank">한국소비자원 - 자동차 수리 관련 소비자 피해 정보</a>
+        <a href="https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=154541#0000" target="_blank">국가법령정보센터 - 자동차 관리법</a>
+        <a href="https://www.ftc.go.kr/www/CONTENTS_VIEW.html?CONTENTS_NO=10" target="_blank">공정거래위원회 - 자동차 소비자 가이드</a>
+        <a href="https://namu.wiki/w/%EC%9E%90%EB%8F%99%EC%B0%A8%EC%A0%95%EB%B9%84" target="_blank">나무위키 - 자동차 정비 관련 정보</a>
+        <a href="https://www.carisyou.com/" target="_blank">카이즈유 - 국내 자동차 시장 분석 자료</a>
+        <a href="https://www.motorgraph.com/" target="_blank">모터그래프 - 자동차 리뷰 및 정보</a>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>레인지로버 유지비 무료 견적 및 상담 요청</h2>
+      <p>정확한 <strong>레인지로버 유지비</strong> 견적을 원하시면, 전문가와의 1:1 상담을 통해 모델별, 연식별, 주행 환경별 맞춤형 견적을 받아보세요. <strong>레인지로버 유지비 견적</strong>은 사전에 꼼꼼히 비교할수록 절감 효과가 커집니다.</p>
+      <a href="#maintenance-form" class="cta-button">무료 견적 요청하기</a>
+    </section>
+  </main>
+
+  <script>
+    document.querySelectorAll('dl dt').forEach((dt) => {
+      dt.addEventListener('click', () => {
+        const dd = dt.nextElementSibling;
+        const expanded = dt.getAttribute('aria-expanded') === 'true';
+        dt.setAttribute('aria-expanded', !expanded);
+        dt.classList.toggle('active');
+        dd.style.display = expanded ? 'none' : 'block';
+      });
+      dt.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          dt.click();
+        }
+      });
+    });
+
+    // Simple form handler for demonstration purposes
+    document.getElementById('maintenance-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      document.getElementById('result-message').innerText = '견적 요청이 접수되었습니다. 곧 전문가가 연락드리겠습니다.';
+    });
+  </script>
+  
